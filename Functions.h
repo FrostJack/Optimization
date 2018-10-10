@@ -10,3 +10,5 @@ double GoldenRatio(double a, double b, fptr f, double eps, int index, std::vecto
 double Norm(const std::vector<double> &x, const std::vector<double> &y, int n);
 
 int CoordinateDescent(fptr f, double eps, std::vector<double> &var, const std::vector<double> &border);
+
+int RandomSearch(fptr f, double eps, std::vector<double> &var, const std::vector<double> &border);
