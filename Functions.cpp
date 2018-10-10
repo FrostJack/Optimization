@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Functions.h"
+#include <iostream>
 
 double GoldenRatio(double a, double b, fptr f, double eps, int index, std::vector<double> &var) {
 	double len = b - a;
@@ -14,8 +15,8 @@ double GoldenRatio(double a, double b, fptr f, double eps, int index, std::vecto
 			a = left;
 			len = b - a;
 			left = right;
-			right = a + alpha * len;
 			fleft = fright;
+			right = a + alpha * len;
 			var[index] = right;
 			fright = f(var);
 		}
@@ -44,7 +45,7 @@ int CoordinateDescent(fptr f, double eps, std::vector<double> &var, const std::v
 	double len = 0;
 	double eps2 = pow(eps, 2);
 	int steps = 0;
-	int n = var.size() / 2;
+	int n = border.size() / 2;
 	std::vector<double> var2(var);
 	while (steps < 10000) {
 		for (int j = 0; j < n; ++j) {
