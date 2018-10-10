@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Functions.h"
 
-double GoldenRatio(double a, double b, fptr f, double eps, int index, std::vector<double> var) {
+double GoldenRatio(double a, double b, fptr f, double eps, int index, std::vector<double> &var) {
 	double len = b - a;
 	double left = b - alpha * len;
 	var[index] = left;
@@ -30,4 +30,30 @@ double GoldenRatio(double a, double b, fptr f, double eps, int index, std::vecto
 		}
 	}
 	return (a + b) / 2;
+}
+
+double Norm(const std::vector<double> &x, const std::vector<double> &y, int n) {
+	double res = 0;
+	for (int j = 0; j < n; ++j) {
+		res += pow(x[j] - y[j], 2);
+	}
+	return res;
+}
+
+int CoordinateDescent(fptr f, double eps, std::vector<double> &var, const std::vector<double> &border) {
+	double len = 0;
+	double eps2 = pow(eps, 2);
+	int steps = 0;
+	int n = var.size() / 2;
+	std::vector<double> var2(var);
+	while (steps < 10000) {
+		for (int j = 0; j < n; ++j) {
+			var[j] = GoldenRatio(border[2 * j], border[2 * j + 1], f, eps, j, var);
+		}
+		if (Norm(var, var2, n) < eps2) {
+			return 1;
+		}
+		var2 = var;
+	}
+	return 0;
 }
