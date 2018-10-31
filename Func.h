@@ -1,7 +1,8 @@
 #pragma once
 
-#include <vector>;
+#include <vector>
 #include <math.h>
+
 class Func
 {
 protected:

@@ -147,10 +147,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="F.h" />
+    <ClInclude Include="Border.h" />
+    <ClInclude Include="CoordDescent.h" />
     <ClInclude Include="FourDim.h" />
     <ClInclude Include="Func.h" />
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="Optim.h" />
+    <ClInclude Include="RandomSearch.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ThreeDim.h" />
@@ -158,9 +161,13 @@
     <ClInclude Include="TwoDim2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Border.cpp" />
+    <ClCompile Include="CoordDescent.cpp" />
     <ClCompile Include="FourDim.cpp" />
     <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="Optim.cpp" />
     <ClCompile Include="Optimization.cpp" />
+    <ClCompile Include="RandomSearch.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
