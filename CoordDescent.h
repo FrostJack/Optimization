@@ -8,7 +8,7 @@ class CoordDescent :
 {
 public:
 	CoordDescent(): Optim() {};
-	void calculate(Func *pfun, const Border &border, const std::vector<double> &point, const double &eps = 0, const int &improve = 10000) 
+	void calculate(Func *pfun, const Border &border, const std::vector<double> &point, const double &eps = 0, const int &improve = max_steps)
 		override;
 	~CoordDescent() {};
 };

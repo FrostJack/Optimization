@@ -11,7 +11,8 @@ void CoordDescent::calculate(Func *pfun, const Border &border, const std::vector
 	ans = point;
 	f_ans = pfun->f(ans);
 	double f_var;
-	while (steps < 10000) {
+	while (steps < max_steps) {
+		++steps;
 		for (int j = 0; j < n; ++j) {
 			var[j] = GoldenRatio(border.left[j], border.right[j], pfun, eps, j, var);
 		}

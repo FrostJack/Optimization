@@ -15,7 +15,8 @@ void RandomSearch::calculate(Func *pfun, const Border &border, const std::vector
 	f_ans = pfun->f(ans);
 	std::vector<double> y(point);
 	double f_y;
-	while (steps < 100000) {
+	while (steps < max_steps) {
+		++steps;
 		rand = stand(generator);
 		if (rand > prob)
 			for (int j = 0; j < n; ++j) {
