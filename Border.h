@@ -1,9 +1,11 @@
 #pragma once
 #include <vector>
 
+//n-dimensional rectangular domain
+
 class Border
 {
-	int n;
+	int n; //dimension
 public:
 	std::vector<double> left;
 	std::vector<double> right;

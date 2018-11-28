@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "RandomSearch.h"
 #include <random>
+#include <iostream>
 
 void RandomSearch::calculate(Func *pfun, const Border &border, const std::vector<double> &point, const double &eps,
 	const int &improve) {
@@ -15,6 +16,7 @@ void RandomSearch::calculate(Func *pfun, const Border &border, const std::vector
 	f_ans = pfun->f(ans);
 	std::vector<double> y(point);
 	double f_y;
+	double delta = 1;
 	while (steps < max_steps) {
 		++steps;
 		rand = stand(generator);
@@ -30,7 +32,7 @@ void RandomSearch::calculate(Func *pfun, const Border &border, const std::vector
 				else left = ans[j] - delta;
 				if (border.right[j] < ans[j] + delta)
 					right = border.right[j];
-				else right = ans[j] - delta;
+				else right = ans[j] + delta;
 				rand = left + (right - left)*stand(generator);
 				y[j] = rand;
 			}
@@ -44,6 +46,8 @@ void RandomSearch::calculate(Func *pfun, const Border &border, const std::vector
 				return;
 			}
 			f_ans = f_y;
+			if (rand <= prob)
+				delta *= 0.7;
 			improve_steps = 0;
 		}
 		else {

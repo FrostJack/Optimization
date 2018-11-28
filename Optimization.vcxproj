@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Border.h" />
     <ClInclude Include="CoordDescent.h" />
+    <ClInclude Include="Exception.h" />
     <ClInclude Include="FourDim.h" />
     <ClInclude Include="Func.h" />
     <ClInclude Include="Functions.h" />
