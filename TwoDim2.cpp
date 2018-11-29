@@ -7,5 +7,5 @@ double TwoDim2::f(const std::vector<double> &point) {
 		throw Exception("Point with wrong dimension received in ThreeDim function");
 	double x = point[0];
 	double y = point[1];
-	return 3 * pow(sin(x), 2) + 4 * pow(cos(y), 2);
+	return pow((1 - x), 2) + 100*pow(y - pow(x, 2), 2);
 }
