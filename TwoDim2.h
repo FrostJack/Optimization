@@ -1,6 +1,6 @@
 #pragma once
 #include "Func.h"
-/*
+/**
 Rosenbrock function
 f(x, y) = (1 - x)^2 + 100(y - x^2)^2
 min f(x, y) = 0 at (1, 1)

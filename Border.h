@@ -1,11 +1,13 @@
 #pragma once
 #include <vector>
 
-//n-dimensional rectangular domain
+/**
+n-dimensional rectangular domain
+*/
 
 class Border
 {
-	int n; //dimension
+	int n; /**< dimension */
 public:
 	std::vector<double> left;
 	std::vector<double> right;
